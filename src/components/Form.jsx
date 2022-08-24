@@ -3,7 +3,7 @@ import useWeather from '../hooks/useWeather'
 
 const Form = () => {
   const [alert, setAlert] = useState('')
-  const {search, dataSearch, getWeather} = useWeather()
+  const {search, dataSearch, getWeather, result} = useWeather()
 
   const {ciudad, pais} = search
 
@@ -30,7 +30,7 @@ const Form = () => {
         <div className="campo">
           <label htmlFor="pais">País</label>
           <select id='pais' name='pais' onChange={dataSearch} value={pais}>
-            <option value="">--- Seleccine un País --- </option>
+            <option value="">Seleccine un País</option>
             <option value="US">Estados Unidos</option>
             <option value="MX">México</option>
             <option value="AR">Argentina</option>

@@ -9,6 +9,7 @@ const WeatherProvider = ({children}) => {
         pais: ''
     })
     const [result, setResult] = useState({})
+    const [loading, setLoading] = useState(false)
 
 
     const dataSearch = e =>{
@@ -18,18 +19,22 @@ const WeatherProvider = ({children}) => {
         })
     } 
     const getWeather = async datas => {
+        setLoading(true)
         try {
             const { ciudad, pais } = datas
             const appID = import.meta.env.VITE_API_KEY
-            const url = `http://api.openweathermap.org/geo/1.0/direct?q=${ciudad},${pais}&limit=1&appid=${appID}`
+            const url = `https://api.openweathermap.org/geo/1.0/direct?q=${ciudad},${pais}&limit=1&appid=${appID}`
             const { data } = await axios(url)
             const { lat, lon } = data[0]
             
             const urlWeather = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${appID}`
             const { data: weather } = await axios(urlWeather) 
             setResult(weather)
+            
         } catch (error) {
             console.log(error)
+        } finally {
+            setLoading(false)
         }
     }
     return(
@@ -37,7 +42,8 @@ const WeatherProvider = ({children}) => {
             search,
             dataSearch,
             getWeather,
-            result
+            result,
+            loading
         }}>
             {children}
         </WeatherContext.Provider>

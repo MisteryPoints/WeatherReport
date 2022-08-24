@@ -1,9 +1,9 @@
 body {
   font-family: 'Hubballi', cursive;
   background-color: #f1f5f9;
-  font-size: 1.6rem;
+  font-size: 1.6rem; 
 }
-header {
+header{
   background: #C02425;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #F0CB35, #C02425);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to left, #F0CB35, #C02425); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -13,6 +13,25 @@ header {
   -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.25);
   -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.25);
   box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.25);
+}
+footer{
+  background: #C02425;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #F0CB35, #C02425);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #F0CB35, #C02425); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  display: block;  
+  position: fixed;
+  left: 0; 
+  right: 0;
+  bottom: 0;
+  padding: 1rem;
+  border-top: .35rem solid rgb(202, 202, 202); 
+}
+footer h2{
+  text-align: center;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  margin:0;
 }
 header h1 {
   text-align: center;
@@ -35,14 +54,18 @@ main {
   max-width: 1200px;
 }
 .contenedor {
-  margin: 0 auto 2rem auto;
+  margin: 0 auto .5rem auto;
   border-radius: .5rem;
-  background-color: white;
-  padding: 4rem;
+  background-color: rgb(255, 255, 255);
+  padding-top: 4rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-bottom: 2rem;
   -webkit-box-shadow: 0px 10px 33px -17px rgba(173,173,173,1);
   -moz-box-shadow: 0px 10px 33px -17px rgba(173,173,173,1);
   box-shadow: 0px 10px 33px -17px rgba(173,173,173,1);
   width: 100%;
+  margin-bottom: 4rem;
 }
 form {
   width: 100%;
@@ -53,7 +76,7 @@ form {
 }
 .campo label {
   display: block;
-
+  font-weight: bold;
 }
 .campo input,
 .campo select {
@@ -81,6 +104,7 @@ form {
   transition: background-color .3s ease;
   border-radius: 100px;
   transition-duration: 250m,s;
+  bottom: 0;
 }
 @media (min-width: 768px) {
    input[type="submit"]  {
@@ -89,6 +113,7 @@ form {
 }
  input[type="submit"]:hover {
   background-color: #aa590d;
+  cursor:pointer;
 }
 
 
@@ -109,4 +134,93 @@ form {
   color:white;
   font-weight: bold;
   border-radius: 10px;
+}
+
+.clima{
+  padding-top: 2rem;
+}
+ 
+.clima p{
+  text-align: center;
+  margin: 0;
+} 
+.clima p span{
+  font-size: 1rem;
+  vertical-align: super;
+}
+.clima .c{
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif
+}
+
+.temp_min_max{
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.feel{
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center; 
+}
+.feel span{
+  font-size: 1rem;
+  vertical-align: super; 
+}
+.weather{
+  display: flex;
+  justify-content:space-evenly; 
+  align-items: center;
+  color: white;
+  background: linear-gradient(to left, #f1f0ec, #2448c0);
+  border-radius: 15px; 
+  margin-bottom: .5rem;  
+  font-size: 3rem; 
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+}
+
+.desc{
+  text-transform: uppercase;
+  font-weight: bold; 
+  text-align: center;
+}
+
+.title h2{
+  text-align: center;
+  color: black;
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  margin-top: 0;
+}
+.spinner {
+  width: 100px;
+  height: 100px;
+  background-color: #e9780e;
+
+  margin: 100px auto;
+  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+  animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes sk-rotateplane {
+  0% { 
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+  } 50% { 
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+  } 100% { 
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
 }

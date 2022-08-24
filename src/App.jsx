@@ -9,6 +9,9 @@ import { WeatherProvider } from './context/WeatherProvider'
         <h1>Buscador de Clima</h1>
       </header>
       <AppWeather/>
+      <footer>
+        <h2>Desarrollado por DevPoint Víctor Tejada</h2>
+      </footer>
     </WeatherProvider>
   )
 }
